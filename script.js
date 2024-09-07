@@ -25,7 +25,7 @@ const updateImageCard = (imgCard, blob) => {
   imgCard.innerHTML = ""; // Clear the spinner
 
   const imgElement = document.createElement("img");
-  imgElement.src = URL.createObjectURL(blob); // Create a URL for the blob
+  imgElement.src = URL.createObjectURL(blob); 
   imgElement.alt = "AI generated image";
 
   const downloadBtn = document.createElement("a");
@@ -34,7 +34,7 @@ const updateImageCard = (imgCard, blob) => {
   downloadBtn.download = `${new Date().getTime()}.png`;
 
   const downloadIcon = document.createElement("img");
-  downloadIcon.src = "images/download.svg"; // Ensure this path is correct
+  downloadIcon.src = "images/download.svg"; 
   downloadIcon.alt = "Download icon";
 
   downloadBtn.appendChild(downloadIcon);
@@ -55,8 +55,7 @@ const generateSingleImage = async (userPrompt, index) => {
         parameters: {
           num_inference_steps: 50,
           guidance_scale: 7.5,
-          seed: Math.floor(Math.random() * 10000) + index, // Ensure different seed for each image
-        },
+          seed: Math.floor(Math.random() * 10000) + index, 
       }),
     });
 
